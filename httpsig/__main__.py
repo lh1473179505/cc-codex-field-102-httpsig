@@ -6,6 +6,7 @@ import json
 import sys
 from pathlib import Path
 
+from httpsig.engine import EngineError
 from httpsig.load import LoadError, load_keys, load_message, load_policy, signature_labels
 
 
@@ -87,7 +88,7 @@ def main(argv: list[str] | None = None) -> int:
                 return 1
             print("report is missing a decision of ok or reject", file=sys.stderr)
             return 2
-    except NotImplementedError as exc:
+    except (NotImplementedError, EngineError) as exc:
         print(str(exc), file=sys.stderr)
         return 2
     return 2
