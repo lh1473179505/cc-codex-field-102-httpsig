@@ -1,0 +1,15 @@
+{
+  "method": "POST",
+  "scheme": "https",
+  "authority": "api.example.com",
+  "path": "/v1/orders",
+  "query": "",
+  "headers": [
+    [
+      "content-type",
+      "application/json"
+    ]
+  ],
+  "body": "{\"sku\":\"A-12\",\"qty\":2}",
+  "now": 1730000000
+}

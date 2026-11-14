@@ -1,0 +1,33 @@
+{
+  "allowed_algs": [
+    "hmac-sha256"
+  ],
+  "allowed_keyids": [
+    "gw1",
+    "gw2"
+  ],
+  "max_clock_skew": 30,
+  "required_components": [
+    "@method",
+    "@authority",
+    "@path"
+  ],
+  "required_tag": "gw-req",
+  "require_content_digest": true,
+  "sign": {
+    "label": "sig-post",
+    "keyid": "gw1",
+    "created": 1730000000,
+    "expires": 1730000600,
+    "nonce": "n-post-1",
+    "tag": "gw-req",
+    "ensure_content_digest": true,
+    "components": [
+      "@method",
+      "@authority",
+      "@path",
+      "content-digest",
+      "content-type"
+    ]
+  }
+}
